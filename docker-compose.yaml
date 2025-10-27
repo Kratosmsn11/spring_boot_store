@@ -1,0 +1,13 @@
+services:
+  keycloak:
+    container_name: keycloak_demo
+    image: quay.io/keycloak/keycloak:25.0.5
+    ports:
+      - 9090:8080
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: password
+    volumes:
+      - D:/Learning/Spring Boot/data_volumes/keycloak:/opt/keycloak/data
+    command:
+      - 'start-dev'

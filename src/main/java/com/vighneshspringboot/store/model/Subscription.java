@@ -1,4 +1,4 @@
-package com.vighneshspringboot.store.model;
-
-public class Subscription {
-}
+//package com.vighneshspringboot.store.model;
+//
+//public class Subscription {
+//}

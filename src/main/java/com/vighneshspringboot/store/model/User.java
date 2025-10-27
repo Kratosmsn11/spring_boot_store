@@ -12,7 +12,7 @@ import java.util.Set;
 import java.time.OffsetTime;
 
 @Entity
-@Table(name = "users", schema = "subsHub")
+@Table(name = "users")
 public class User {
 
     // variable as per the users database
@@ -32,8 +32,8 @@ public class User {
 
     // ------------------------------------------> createdAt - maybe do not need it, already handled at DB level <------------------------------------------
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Subscription> subscriptions;
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Set<Subscription> subscriptions;
 
     // constructor
     public User(){
@@ -81,12 +81,12 @@ public class User {
     // ------------------------------------------> created Timestamp - may not need handled a DB level <------------------------------------------
 
     // Subscription
-    public Set<Subscription> getSubscriptions(){
-        return subscriptions;
-    }
+//    public Set<Subscription> getSubscriptions(){
+//        return subscriptions;
+//    }
 
-    public void setSubscriptions(Set<Subscription> subscriptions){
-        this.subscriptions = subscriptions;
-    }
+//    public void setSubscriptions(Set<Subscription> subscriptions){
+//        this.subscriptions = subscriptions;
+//    }
 
 }
