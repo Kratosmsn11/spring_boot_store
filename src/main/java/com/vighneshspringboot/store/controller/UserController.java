@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> getAUser(){
+    public List<User> getAllUser(){
         return userRepo.findAll();
     }
 

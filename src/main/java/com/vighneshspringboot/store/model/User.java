@@ -6,13 +6,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.CascadeType;
-import java.util.Set;
-import java.time.OffsetTime;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users", schema = "subshub")
 public class User {
 
     // variable as per the users database
