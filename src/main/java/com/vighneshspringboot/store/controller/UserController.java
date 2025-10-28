@@ -26,5 +26,4 @@ public class UserController {
     public List<User> getAllUser(){
         return userRepo.findAll();
     }
-
 }

@@ -13,18 +13,14 @@ public class User {
 
     // variable as per the users database
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(nullable = false, updatable = false)
+    private String  id;
 
     @Column(nullable = false, length = 50)
     private String username;
 
     @Column(nullable = false, length = 255)
     private String email;
-
-    // need to hash the pw
-    @Column(nullable = false)
-    private String password;
 
     // ------------------------------------------> createdAt - maybe do not need it, already handled at DB level <------------------------------------------
 
@@ -36,14 +32,20 @@ public class User {
 
     }
 
+    public User(String keycloakUserId, String username, String email) {
+        this.id = keycloakUserId; // No more Long.valueOf()
+        this.username = username;
+        this.email = email;
+    }
+
     // Getters & Setters
 
     // user Id
-    public Long getId(){
+    public String getId(){
         return id;
     }
 
-    public void setId(Long id){
+    public void setId(String id){
         this.id = id;
     }
 
@@ -58,20 +60,11 @@ public class User {
 
     // email
     public String getEmail(){
-        return username;
+        return email;
     }
 
     public void setEmail(String email){
         this.email = email;
-    }
-
-    // password
-    public String getPassword(){
-        return password;
-    }
-
-    public void setPassword(String email){
-        this.password = password;
     }
 
     // ------------------------------------------> created Timestamp - may not need handled a DB level <------------------------------------------
@@ -84,5 +77,4 @@ public class User {
 //    public void setSubscriptions(Set<Subscription> subscriptions){
 //        this.subscriptions = subscriptions;
 //    }
-
 }
