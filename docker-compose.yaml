@@ -11,3 +11,15 @@ services:
       - D:/Learning/Spring Boot/data_volumes/keycloak:/opt/keycloak/data
     command:
       - 'start-dev'
+
+  postgres_db:
+    container_name: postgres
+    image: postgres:16
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: subshub
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - D:/Learning/Spring Boot/data_volumes/postgres:/var/lib/postgresql/data
