@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 
 @Entity
-@Table(name = "users", schema = "subshub")
+@Table(name = "users")
 public class User {
 
     // variable as per the users database
