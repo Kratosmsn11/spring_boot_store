@@ -1,4 +1,6 @@
 services:
+
+# Keycloak
   keycloak:
     container_name: keycloak_demo
     image: quay.io/keycloak/keycloak:25.0.5
@@ -12,6 +14,7 @@ services:
     command:
       - 'start-dev'
 
+# Postgres DB
   postgres_db:
     container_name: postgres
     image: postgres:16
@@ -23,3 +26,36 @@ services:
       POSTGRES_PASSWORD: mypassword
     volumes:
       - D:/Learning/Spring Boot/data_volumes/postgres:/var/lib/postgresql/data
+
+# Zookeeper
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: zookeeper
+    restart: always
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+# Kafka Broker
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: kafka
+    restart: always
+    ports:
+      # Exposes the port 9092 for your Spring Boot application on the host machine
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181  # Connects to Zookeeper service name
+
+      # The listener for internal traffic (used by services inside the Docker network)
+      KAFKA_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://0.0.0.0:9092
+
+      # The listener your Spring Boot app will use when running on the host machine
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1

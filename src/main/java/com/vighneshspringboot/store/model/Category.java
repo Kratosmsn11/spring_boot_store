@@ -10,7 +10,7 @@ import jakarta.persistence.Column;
 import java.util.UUID;
 
 @Entity
-@Table(name = "categories", schema = "subshub")
+@Table(name = "categories")
 public class Category {
 
     @Id
