@@ -1,0 +1,65 @@
+/* Reset basic margins */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER STYLES */
+.app-header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between; /* Pushes Logo left, Logout right */
+    align-items: center;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-logout {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-logout:hover {
+    background-color: #c9302c;
+}
+
+/* MAIN CONTENT - Expands to fill space */
+.app-content {
+    flex: 1; /* Pushes footer to bottom even if content is short */
+    padding: 2rem;
+    background-color: #f4f4f4;
+}
+
+/* FOOTER STYLES */
+.app-footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between; /* Version on right, text on left */
+    padding-left: 2rem;
+    padding-right: 2rem;
+}

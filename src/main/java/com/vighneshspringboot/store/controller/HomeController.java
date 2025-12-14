@@ -1,4 +1,4 @@
-package com.vighneshspringboot.store;
+package com.vighneshspringboot.store.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
@@ -14,6 +14,9 @@ public class HomeController {
     @Value("${spring.application.name}")
     private String appName;
 
+    @Value("${app.version}")
+    private String appVersion;
+
     @RequestMapping("/home")
     public String home(Authentication authentication, Model model){
         if(authentication instanceof OAuth2AuthenticationToken){
@@ -21,13 +24,12 @@ public class HomeController {
             String name = oidcUser.getFullName();
             model.addAttribute("username",name);
         }
+
+        model.addAttribute("version", appVersion);
+        model.addAttribute("username", "User");
+
         return "home";
     }
-
-//    private String getViewName(){
-//        System.out.println("appName : " + appName);
-//        return "home";
-//    }
 
     @RequestMapping("/admin")
     public String keycloakAdmin(){
