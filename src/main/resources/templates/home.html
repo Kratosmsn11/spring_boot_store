@@ -3,9 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>SubsHub</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
 <body>
-    <h1>Hello, <span th:text = "${username}">User</span></h1>
-    <p>You have successfully logged in to SubsHub.</p>
+    <header class="app-header">
+        <div class="header-left">
+            <a th:href="@{/home}" class="logo-area">
+                <img th:src="@{/images/logo.png}" alt="SubsHub" style="height: 40px;" />
+            </a>
+        </div>
+
+        <div class="header-right">
+            <span class="welcome-text">Hello, <span th:text="${username}">User</span></span>
+            <form th:action="@{/logout}" method="post" class="logout-form">
+                <button type="submit" class="btn-logout">Logout</button>
+            </form>
+        </div>
+    </header>
+    <main class="app-content">
+        <h1>Welcome to SubHub</h1>
+        <p>This is your protected content area.</p>
+    </main>
+
+    <footer class="app-footer">
+        <p>System Status: Online</p>
+        <p class="version-tag">Version: <span th:text="${version}">0.0.0</span></p>
+    </footer>
 </body>
 </html>
