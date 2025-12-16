@@ -9,4 +9,5 @@ import java.util.Optional;
 @Repository
 public interface UserRepo extends JpaRepository<User, String>{
 //    Optional<User> findById(String keycloakUserId);
+    Optional<User> findByUsername(String username);
 }

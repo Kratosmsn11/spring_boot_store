@@ -26,7 +26,6 @@ public class HomeController {
         }
 
         model.addAttribute("version", appVersion);
-        model.addAttribute("username", "User");
 
         return "home";
     }

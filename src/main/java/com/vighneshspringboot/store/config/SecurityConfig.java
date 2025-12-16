@@ -1,5 +1,7 @@
 package com.vighneshspringboot.store.config;
+import com.vighneshspringboot.store.service.CustomOAuth2UserService;
 
+import com.vighneshspringboot.store.service.CustomOidcUserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -17,9 +19,15 @@ import org.springframework.security.web.authentication.logout.LogoutSuccessHandl
 public class SecurityConfig {
 
     private final ClientRegistrationRepository clientRegistrationRepository;
+    private final CustomOAuth2UserService customOAuth2UserService;
+    private final CustomOidcUserService customOidcUserService;
 
-    public SecurityConfig(ClientRegistrationRepository clientRegistrationRepository){
+    public SecurityConfig(ClientRegistrationRepository clientRegistrationRepository,
+                          CustomOAuth2UserService customOAuth2UserService,
+                          CustomOidcUserService customOidcUserService){
         this.clientRegistrationRepository = clientRegistrationRepository;
+        this.customOAuth2UserService = customOAuth2UserService;
+        this.customOidcUserService = customOidcUserService;
     }
 
     @Bean
@@ -27,10 +35,14 @@ public class SecurityConfig {
         http
                 .oauth2Login(oauth2Login ->
                         oauth2Login
+                                .userInfoEndpoint(userInfo -> userInfo
+                                        .userService(customOAuth2UserService)
+                                        .oidcUserService(customOidcUserService)
+                                )
                                 .successHandler(authenticationSuccessHandler())
                 )
                 .authorizeHttpRequests(authorize ->authorize
-                        .requestMatchers("/", "/error").permitAll()
+                        .requestMatchers("/", "/error", "/css/**", "/images/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .logout(logout -> logout
