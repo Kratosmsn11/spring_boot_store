@@ -9,6 +9,7 @@ services:
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: password
+      TZ: America/Los_Angeles
     volumes:
       - D:/Learning/Spring Boot/data_volumes/keycloak:/opt/keycloak/data
     command:
@@ -24,6 +25,7 @@ services:
       POSTGRES_DB: subshub
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
+      TZ: America/Los_Angeles
     volumes:
       - D:/Learning/Spring Boot/data_volumes/postgres:/var/lib/postgresql/data
 
@@ -35,6 +37,7 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
+      TZ: America/Los_Angeles
 
 # Kafka Broker
   kafka:
@@ -42,18 +45,16 @@ services:
     container_name: kafka
     restart: always
     ports:
-      # Exposes the port 9092 for your Spring Boot application on the host machine
       - "9092:9092"
     depends_on:
       - zookeeper
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181  # Connects to Zookeeper service name
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      TZ: America/Los_Angeles
 
-      # The listener for internal traffic (used by services inside the Docker network)
       KAFKA_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://0.0.0.0:9092
 
-      # The listener your Spring Boot app will use when running on the host machine
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
 
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
