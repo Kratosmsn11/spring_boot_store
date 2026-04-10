@@ -1,0 +1,35 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Spring Boot App",
+      "runtimeExecutable": "mvnw.cmd",
+      "runtimeArgs": ["spring-boot:run"],
+      "port": 8080
+    },
+    {
+      "name": "Docker Infrastructure (Postgres + Keycloak + Kafka)",
+      "runtimeExecutable": "docker",
+      "runtimeArgs": ["compose", "up"],
+      "port": 9090
+    },
+    {
+      "name": "Keycloak",
+      "runtimeExecutable": "docker",
+      "runtimeArgs": ["compose", "up", "keycloak"],
+      "port": 9090
+    },
+    {
+      "name": "PostgreSQL",
+      "runtimeExecutable": "docker",
+      "runtimeArgs": ["compose", "up", "postgres_db"],
+      "port": 5432
+    },
+    {
+      "name": "Kafka + Zookeeper",
+      "runtimeExecutable": "docker",
+      "runtimeArgs": ["compose", "up", "zookeeper", "kafka"],
+      "port": 9092
+    }
+  ]
+}
