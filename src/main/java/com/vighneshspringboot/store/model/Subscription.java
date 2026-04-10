@@ -73,4 +73,85 @@ public class Subscription {
      */
     @Column(name = "user_id", length = 100, nullable = false)
     private String userId;
+
+    // Constructors
+
+    public Subscription() {}
+
+    public Subscription(String name, BillingCycle billingCycle, LocalDate nextPaymentDate,
+                        UUID categoryId, ZonedDateTime createdAt, BigDecimal price, String userId) {
+        this.name = name;
+        this.billingCycle = billingCycle;
+        this.nextPaymentDate = nextPaymentDate;
+        this.categoryId = categoryId;
+        this.createdAt = createdAt;
+        this.price = price;
+        this.userId = userId;
+    }
+
+    // Getters & Setters
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public BillingCycle getBillingCycle() {
+        return billingCycle;
+    }
+
+    public void setBillingCycle(BillingCycle billingCycle) {
+        this.billingCycle = billingCycle;
+    }
+
+    public LocalDate getNextPaymentDate() {
+        return nextPaymentDate;
+    }
+
+    public void setNextPaymentDate(LocalDate nextPaymentDate) {
+        this.nextPaymentDate = nextPaymentDate;
+    }
+
+    public UUID getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(UUID categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public ZonedDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(ZonedDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 }
