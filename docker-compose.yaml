@@ -11,7 +11,7 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: password
       TZ: America/Los_Angeles
     volumes:
-      - D:/Learning/Spring Boot/data_volumes/keycloak:/opt/keycloak/data
+      - keycloak_data:/opt/keycloak/data
     command:
       - 'start-dev'
 
@@ -27,13 +27,14 @@ services:
       POSTGRES_PASSWORD: mypassword
       TZ: America/Los_Angeles
     volumes:
-      - D:/Learning/Spring Boot/data_volumes/postgres:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
 
 # Zookeeper
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
     container_name: zookeeper
     restart: always
+    user: root
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -44,6 +45,7 @@ services:
     image: confluentinc/cp-kafka:7.5.0
     container_name: kafka
     restart: always
+    user: root
     ports:
       - "9092:9092"
     depends_on:
@@ -60,3 +62,7 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+volumes:
+  keycloak_data:
+  postgres_data:
