@@ -11,7 +11,7 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: password
       TZ: America/Los_Angeles
     volumes:
-      - keycloak_data:/opt/keycloak/data
+      - D:/Learning/Spring Boot/data_volumes/keycloak:/opt/keycloak/data
     command:
       - 'start-dev'
 
@@ -27,7 +27,7 @@ services:
       POSTGRES_PASSWORD: mypassword
       TZ: America/Los_Angeles
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - D:/Learning/Spring Boot/data_volumes/postgres:/var/lib/postgresql/data
 
 # Zookeeper
   zookeeper:
@@ -63,6 +63,3 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
-volumes:
-  keycloak_data:
-  postgres_data:
