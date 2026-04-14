@@ -8,26 +8,26 @@
       "port": 8080
     },
     {
-      "name": "Docker Infrastructure (Postgres + Keycloak + Kafka)",
-      "runtimeExecutable": "docker",
+      "name": "Podman Infrastructure (Postgres + Keycloak + Kafka)",
+      "runtimeExecutable": "podman",
       "runtimeArgs": ["compose", "up"],
       "port": 9090
     },
     {
       "name": "Keycloak",
-      "runtimeExecutable": "docker",
+      "runtimeExecutable": "podman",
       "runtimeArgs": ["compose", "up", "keycloak"],
       "port": 9090
     },
     {
       "name": "PostgreSQL",
-      "runtimeExecutable": "docker",
+      "runtimeExecutable": "podman",
       "runtimeArgs": ["compose", "up", "postgres_db"],
       "port": 5432
     },
     {
       "name": "Kafka + Zookeeper",
-      "runtimeExecutable": "docker",
+      "runtimeExecutable": "podman",
       "runtimeArgs": ["compose", "up", "zookeeper", "kafka"],
       "port": 9092
     }

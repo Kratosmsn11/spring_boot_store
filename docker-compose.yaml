@@ -39,6 +39,15 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
       TZ: America/Los_Angeles
 
+# Redis Cache
+  redis:
+    container_name: redis
+    image: redis:7.2
+    ports:
+      - "6379:6379"
+    environment:
+      TZ: America/Los_Angeles
+
 # Kafka Broker
   kafka:
     image: confluentinc/cp-kafka:7.5.0

@@ -1,5 +1,7 @@
 package com.vighneshspringboot.store.controller;
 
+import com.vighneshspringboot.store.service.CategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
@@ -17,6 +19,13 @@ public class HomeController {
     @Value("${app.version}")
     private String appVersion;
 
+    private final CategoryService categoryService;
+
+    @Autowired
+    public HomeController(CategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
+
     @RequestMapping("/home")
     public String home(Authentication authentication, Model model){
         if(authentication instanceof OAuth2AuthenticationToken){
@@ -26,6 +35,7 @@ public class HomeController {
         }
 
         model.addAttribute("version", appVersion);
+        model.addAttribute("categories", categoryService.getAllCategories());
 
         return "home";
     }
