@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 //import lombok.Data;
 //import lombok.NoArgsConstructor;
 //import lombok.AllArgsConstructor;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.time.LocalDate;
@@ -19,7 +20,7 @@ enum BillingCycle {
 //@Data // Lombok: Generates getters, setters, toString, equals, and hashCode
 //@NoArgsConstructor // Lombok: Generates a no-argument constructor
 //@AllArgsConstructor // Lombok: Generates an all-argument constructor
-public class Subscription {
+public class Subscription implements Serializable {
 
     /**
      * id: [PK] uuid
