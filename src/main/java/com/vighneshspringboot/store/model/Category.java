@@ -7,11 +7,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 @Entity
 @Table(name = "categories")
-public class Category {
+public class Category implements Serializable {
 
     @Id
     @GeneratedValue
