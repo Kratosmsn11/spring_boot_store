@@ -1,0 +1,356 @@
+[33mcommit 34b6f38a10b2efd63fb53803b480ca94872767bb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m35-move-to-podman-from-docker[m[33m, [m[1;31morigin/35-move-to-podman-from-docker[m[33m)[m
+Merge: 3107d73 2999aa1
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sat Apr 11 04:46:42 2026 -0700
+
+    Merge pull request #36 from Kratosmsn11/claude/practical-austin
+    
+    Migrate infrastructure from Docker to Podman
+
+[33mcommit 2999aa1511a3ec2d655321e47989917d07fdcc61[m[33m ([m[1;31morigin/claude/practical-austin[m[33m, [m[1;32mclaude/practical-austin[m[33m)[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sat Apr 11 03:26:52 2026 -0700
+
+    Migrate infrastructure from Docker to Podman
+    
+    - Replace docker with podman in all launch.json configurations
+    - Switch to named volumes (keycloak_data, postgres_data) for Podman VM compatibility
+    - Add user: root to Confluent Zookeeper and Kafka for rootless Podman support
+    
+    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+
+[33mcommit 3107d732ab7938246a1b0c4605e3522c4c5c8931[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: dbae338 006f785
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Fri Apr 10 16:37:35 2026 -0700
+
+    Merge pull request #34 from Kratosmsn11/claude/magical-kowalevski
+    
+    Complete model classes with constructors, getters, and setters
+
+[33mcommit 006f7856d58eaa49fccb70a85dee8c9b5022766e[m[33m ([m[1;32mclaude/magical-kowalevski[m[33m)[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Fri Apr 10 16:19:32 2026 -0700
+
+    Complete model classes with constructors, getters, and setters
+    
+    - Added constructors, getters, and setters to Subscription.java (was missing all accessors)
+    - Added setId() to Category.java
+    - Added .claude/launch.json with dev server configurations for Spring Boot, Keycloak, Postgres, and Kafka
+    
+    Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+
+[33mcommit dbae338b0b4f062ac2893fa1ff6a40808a3582d6[m[33m ([m[1;31morigin/23-update-the-model-classes[m[33m, [m[1;32m23-update-the-model-classes[m[33m)[m
+Merge: 0875ca5 ec1e50d
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Tue Dec 16 00:32:11 2025 -0800
+
+    Merge pull request #33 from Kratosmsn11/31-change-the-docker-timezone
+    
+    Updated Environment configuration for all the docker containers to us…
+
+[33mcommit ec1e50dbd3b494378ee6802d50bef0a350470ca6[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Tue Dec 16 00:31:39 2025 -0800
+
+    Updated Environment configuration for all the docker containers to use the PST timezone.
+
+[33mcommit 0875ca5587f4f85dbfd275e4cbc569c8164545a8[m
+Merge: c72a117 5067cc5
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Dec 15 21:13:16 2025 -0800
+
+    Merge pull request #32 from Kratosmsn11/18-sync-the-users-from-keycloak-to-postgres
+    
+    18 sync the users from keycloak to postgres
+
+[33mcommit 5067cc5b37b81f512fba29983093ecbb19650b83[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Dec 15 21:08:50 2025 -0800
+
+    Handled users sync between keycloak & Postgres
+
+[33mcommit 2837d45ba1a1328ba3b5eda6c31cd8ddc64bb2bb[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Dec 14 19:05:26 2025 -0800
+
+    - had added a model attribute as placeholder with same key as "username", which was overriding the name of the logged-in user.
+
+[33mcommit b51863f9b16bad272a82c085ad26605556127b6c[m
+Merge: 507fb1d 5ddc8d8
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Dec 14 01:32:32 2025 -0800
+
+    - Added enable scheduling annotation for the project.
+
+[33mcommit c72a1175f76ce077bec76a21b0d95e939e89b438[m
+Merge: 507fb1d 5ddc8d8
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Dec 14 01:32:32 2025 -0800
+
+    Merge pull request #28 from Kratosmsn11/27-create-a-kafka-container
+    
+    27 create a kafka container
+
+[33mcommit 5ddc8d8e8f87efff0568a4828131a4866e4b5434[m
+Merge: 7efb093 507fb1d
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Dec 14 01:31:33 2025 -0800
+
+    Merge remote-tracking branch 'origin/27-create-a-kafka-container' into 27-create-a-kafka-container
+
+[33mcommit 7efb0937907f8a1baed04563bc5f9904b60f8775[m
+Merge: 6bbc74d 0aa1430
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sat Dec 13 18:00:11 2025 -0800
+
+    Added 2 containers for zoopkeeper and kafka.
+
+[33mcommit 507fb1dbaee57f6645b07aa87b93a100daf22ca7[m
+Merge: 6bbc74d 0aa1430
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sat Dec 13 18:00:11 2025 -0800
+
+    Merge pull request #26 from Kratosmsn11/19-add-a-hompage
+    
+    Added a homepage
+
+[33mcommit 0aa1430bc66c6ff5196e5829643bfd9690802dd9[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sat Dec 13 17:56:50 2025 -0800
+
+    - Added a homepage,
+      - Added a logo on the homepage,
+      - Added a functional "logout" button on the homepage which kills the current session & as well lets keycloak understand the session from the current user is terminated,
+      - Added a footer which displays the following:
+        - system status as online (hardcoded),
+        - version of the application
+    - In application.properties, added a property app.version,
+    - Refactored the HomeControl.java
+      - moved the HomeController.java to "Controller" directory from src,
+      - fetch the application version from the application.properties, &
+      - defined product attribute.
+
+[33mcommit 6bbc74dc25a83c42557cf4b795accd06fb5c1fda[m[33m ([m[1;31morigin/17-add-a-registration-page[m[33m, [m[1;32m17-add-a-registration-page[m[33m)[m
+Merge: 7131993 d4dea22
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Nov 24 23:48:07 2025 -0800
+
+    Merge pull request #22 from Kratosmsn11/21-update-the-connection-for-postgres-db
+    
+    21 update the connection for postgres db
+
+[33mcommit d4dea227e5e4540d2f5760a8653790658b23f341[m
+Merge: f11f355 a8315bf
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Nov 24 23:47:34 2025 -0800
+
+    Merge remote-tracking branch 'origin/21-update-the-connection-for-postgres-db' into 21-update-the-connection-for-postgres-db
+
+[33mcommit f11f3558f255b1378c28281cc096fd032c1a6e90[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Nov 24 23:46:34 2025 -0800
+
+    Updated, the following:
+    - the configuration for the datasource uri (i.e. using the docker container DB),
+    - removed the schema under the User.java (in model folder) as using the public schema under subsHub DB(i.e. using the docker container DB).
+
+[33mcommit a8315bf6795b1e4bee47ca78d7382f7a64441ae4[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Nov 24 23:46:34 2025 -0800
+
+    Updated, the following:
+    - the configuration for the datasource uri (i.e. using the docker container DB),
+    - removed the schema under the User.java (in model folder) as using the public schema under subsHub DB(i.e. using the docker container DB).
+
+[33mcommit 7131993fa5ad2686b3b3057f4e14e2054ecd0a37[m
+Merge: d85dc8e 516d17c
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Nov 24 23:32:26 2025 -0800
+
+    Merge pull request #20 from Kratosmsn11/15-add-a-postgres-container
+    
+    Added the configuration for postgres container
+
+[33mcommit 516d17ce367e5c18ed5623b06efdaed418f70f77[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Nov 24 23:29:54 2025 -0800
+
+    Updated the following:
+    - model:
+      1. Category.java class
+      2. Susbcription.java
+      3. User.java
+    - repo:
+      1. UserRepo.java
+      2. CategoryRepo.java
+    - controller:
+      1. UserController.java
+
+[33mcommit d85dc8e8a9d99c51c656215c04dfc5635e1c54b5[m[33m ([m[1;31morigin/16-change-login-ui[m[33m, [m[1;32m16-change-login-ui[m[33m)[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Oct 27 23:48:34 2025 -0700
+
+    Updated the following:
+    - model:
+      1. Category.java class
+      2. Susbcription.java
+      3. User.java
+    - repo:
+      1. UserRepo.java
+      2. CategoryRepo.java
+    - controller:
+      1. UserController.java
+
+[33mcommit bc33db775c3113f114535855715e0dae746666cf[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Oct 27 23:48:34 2025 -0700
+
+    Added the following:
+    - Database Configurations,
+    - Added dependency in the pom.xml, &
+    - Entity class for User table.
+
+[33mcommit 706146f2e1342e1f3195b087f42f8d657a2b1abb[m
+Merge: 6977985 d1cc1d7
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Oct 27 00:31:58 2025 -0700
+
+    Merge pull request #12 from Kratosmsn11/10-add-the-entity-classes-for-subscription-categories-table
+    
+    Added the following:
+
+[33mcommit d1cc1d7aa30f84268525c4c61bca91fde32db243[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Oct 27 00:17:04 2025 -0700
+
+    Added the following:
+    - Database Configurations,
+    - Added dependency in the pom.xml, &
+    - Entity class for User table.
+
+[33mcommit 69779858b11bb60850fa777ba8a810abb3b6ac1b[m
+Merge: 99f8a22 6d858e1
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Sep 8 23:49:46 2025 -0700
+
+    Merge pull request #9 from Kratosmsn11/8-database-connection
+    
+    Added the following:
+
+[33mcommit 6d858e1c4b44d6e2f0d4aa587385e0b5b31304fc[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Mon Sep 8 23:49:03 2025 -0700
+
+    Added the following:
+    - Database Configurations,
+    - Added dependency in the pom.xml, &
+    - Entity class for User table.
+
+[33mcommit 99f8a22672b63669ea8d0aa62077ad9845b184d5[m
+Merge: 868f2be 1c19127
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sat Sep 6 01:49:23 2025 -0700
+
+    Merge pull request #7 from Kratosmsn11/6-improve-folder-structure
+    
+    6-improve-folder-structure
+
+[33mcommit 1c19127ec4a3b7553e9b8cb0e4be1be68d531439[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sat Sep 6 01:46:22 2025 -0700
+
+    Initial Commit
+
+[33mcommit d14da0629bd7601f542920503c7e73a29619ffb7[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Wed Sep 3 23:38:36 2025 -0700
+
+    Initial Commit
+
+[33mcommit 868f2bef5eb3395eebfc67a0c0cf95c052e749a9[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Aug 31 17:04:21 2025 -0700
+
+    Added Index.html in resources with request mapping for '/' to index.html
+
+[33mcommit dc73856e3d7ae8da1e0c68bf0cb481af0ab1b073[m
+Merge: 87cd890 8c4345d
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Aug 31 16:47:25 2025 -0700
+
+    Merge pull request #5 from Kratosmsn11/configure_application_properties
+    
+    Used Value to set Configuration Properties
+
+[33mcommit 8c4345dd3db1f7d218108e2c13c5419b5b3557c0[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Aug 31 16:45:34 2025 -0700
+
+    Added Index.html in resources with request mapping for '/' to index.html
+
+[33mcommit 87cd89083fdcf76b93becbe0095cc338c332b0d5[m
+Merge: f95371e 299387d
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Aug 31 15:59:26 2025 -0700
+
+    Merge pull request #4 from Kratosmsn11/automatic-restart
+    
+    Automatic Restarts Configuration
+
+[33mcommit 299387d24809c6da2946fbcc06e68e481b2f9ddb[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Aug 31 15:52:46 2025 -0700
+
+    Added Index.html in resources with request mapping for '/' to index.html
+
+[33mcommit f95371efd56819bdb9975da5acf98bbfddd1981e[m
+Merge: 6a211ea 8a0d648
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Aug 24 19:15:21 2025 -0700
+
+    Merge pull request #3 from Kratosmsn11/bug_debugging_1
+    
+    Added an fucntion to return the index.html
+
+[33mcommit 8a0d648d009a4eb88d01846af570641f879c14e1[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Aug 24 18:56:23 2025 -0700
+
+    Added an fucntion to return the index.html
+
+[33mcommit 6a211ea36c33e1f38883015e0ad030badfbb7f73[m
+Merge: ed4e3b4 bd151d7
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Aug 24 04:08:14 2025 -0700
+
+    Merge pull request #2 from Kratosmsn11/fix_spring_controller_1
+    
+    Added Index.html in resources with request mapping for '/' to index.html
+
+[33mcommit bd151d70b7e59de062c72dd9c9455308c8aa1794[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Aug 24 04:06:31 2025 -0700
+
+    Added Index.html in resources with request mapping for '/' to index.html
+
+[33mcommit ed4e3b4174e3d76e767da54b78eb20c60edfcb67[m
+Merge: 4255230 6521d73
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Aug 24 03:51:10 2025 -0700
+
+    Merge pull request #1 from Kratosmsn11/spring_controller_1
+    
+    Added Index.html in resources with request mapping for '/' to index.html
+
+[33mcommit 6521d73fbf1a1d30894cfe7e85acbdeb27a05327[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Aug 24 03:50:26 2025 -0700
+
+    Added Index.html in resources with request mapping for '/' to index.html
+
+[33mcommit 42552301d5331c34bd98d1f4e1d40f0f24475656[m
+Author: Vighnesh Prabhu <57503827+Kratosmsn11@users.noreply.github.com>
+Date:   Sun Aug 24 03:34:46 2025 -0700
+
+    Initial commit
