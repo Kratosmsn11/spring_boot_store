@@ -26,6 +26,14 @@ public class HomeController {
         this.categoryService = categoryService;
     }
 
+    @RequestMapping("/")
+    public String index(Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            return "redirect:/home";
+        }
+        return "index";
+    }
+
     @RequestMapping("/home")
     public String home(Authentication authentication, Model model){
         if(authentication instanceof OAuth2AuthenticationToken){
