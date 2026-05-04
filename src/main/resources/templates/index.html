@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>SubsHub</title>
+  <link rel="stylesheet" th:href="@{/css/main.css}">
+  <style>
+    .landing-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .btn-login {
+      background-color: #337ab7;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+    .btn-login:hover {
+      background-color: #286090;
+    }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-left">
+      <span class="logo-text">SubsHub</span>
+    </div>
+  </header>
+  <main class="landing-container">
+    <h1>Welcome to SubsHub</h1>
+    <p>Manage your subscriptions in one place.</p>
+    <a th:href="@{/oauth2/authorization/keycloak}" class="btn-login">Login</a>
+  </main>
+  <footer class="app-footer">
+    <p>System Status: Online</p>
+  </footer>
+</body>
+</html>
