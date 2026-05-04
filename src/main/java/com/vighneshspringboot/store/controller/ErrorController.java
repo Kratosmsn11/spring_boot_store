@@ -9,6 +9,6 @@ public class ErrorController implements org.springframework.boot.web.servlet.err
 
     @RequestMapping("/error")
     public String handleController(HttpServletRequest request){
-        return "redirect:/oauth2/authorization/keycloak";
+        return "redirect:/";
     }
 }
